@@ -12,6 +12,10 @@ body {
   background: #f7f8fb;
 }
 
+a {
+  touch-action: manipulation;
+}
+
 button,
 input,
 textarea,
