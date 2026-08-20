@@ -44,3 +44,26 @@ The production build is static and compatible with Cloudflare Pages:
 
 - Build command: `npm run build`
 - Output directory: `dist`
+
+## Cloudflare Pages
+
+Use these settings when creating the Cloudflare Pages project:
+
+| Setting | Value |
+| --- | --- |
+| Framework preset | `Vite` |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Root directory | repository root |
+| Node.js version | `20.6.0` or newer |
+
+Required Cloudflare Pages environment variables:
+
+| Name | Example | Purpose |
+| --- | --- | --- |
+| `VITE_API_BASE_URL` | `https://api.diogodeandrade.com.br` | Base URL for the AdonisJS backend API. |
+
+Static deployment behavior:
+
+- `public/_redirects` keeps the React app compatible with direct navigation to frontend routes.
+- `public/_headers` applies basic browser security headers to static responses.
