@@ -238,15 +238,107 @@
 .contact-band {
   margin-top: 72px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 24px;
-  align-items: end;
+  grid-template-columns: minmax(0, 0.78fr) minmax(360px, 1fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: start;
   border-top: 1px solid #cbd5e1;
   padding-top: 38px;
 }
 
 .contact-band p {
   max-width: 58ch;
+}
+
+.contact-band__aside {
+  display: grid;
+  gap: 18px;
+}
+
+.signup-form {
+  display: grid;
+  gap: 16px;
+  border: 1px solid #cbd5e1;
+  padding: 20px;
+  background: #ffffff;
+}
+
+.signup-form__field {
+  display: grid;
+  gap: 8px;
+}
+
+.signup-form label {
+  color: #111827;
+  font-weight: 700;
+}
+
+.signup-form__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.signup-form input[type='email'] {
+  min-height: 46px;
+  width: 100%;
+  border: 1px solid #94a3b8;
+  padding: 0 12px;
+  background: #ffffff;
+  color: #111827;
+}
+
+.signup-form input[type='email']:focus,
+.signup-form input[type='checkbox']:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+
+.signup-form button {
+  min-height: 46px;
+  border: 1px solid #0f766e;
+  padding: 0 16px;
+  background: #0f766e;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.signup-form button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.signup-form__consent {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.signup-form__consent input {
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: #0f766e;
+}
+
+.signup-form__error,
+.signup-form__status {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.signup-form__error {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.signup-form__status {
+  color: #475569;
 }
 
 @media (max-width: 860px) {
@@ -276,6 +368,10 @@
   .project-card {
     min-height: auto;
   }
+
+  .signup-form__row {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 520px) {
@@ -286,6 +382,10 @@
   .hero__actions,
   .button-link {
     width: 100%;
+  }
+
+  .signup-form {
+    padding: 16px;
   }
 
   .section {
