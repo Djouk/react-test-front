@@ -1,4 +1,5 @@
 import './App.css'
+import { EmailSignupForm } from './components/EmailSignupForm'
 import { focusAreas, profile, projectHighlights } from './content/profile'
 
 function App() {
@@ -82,18 +83,21 @@ function App() {
       <section className="contact-band" aria-labelledby="contact-title">
         <div>
           <p className="eyebrow">Contact</p>
-          <h2 id="contact-title">Follow the build as it grows.</h2>
+          <h2 id="contact-title">Get a short welcome note.</h2>
           <p>
-            The profile is intentionally small and direct: a place for work,
-            technical focus, and a clear way to find Diogo online.
+            Leave an email address if you want a direct update from Diogo. The
+            form asks only for the address and your consent.
           </p>
         </div>
-        <div className="contact-band__links" aria-label="Contact links">
-          {sortedLinks.map((link) => (
-            <a key={link.id} className="text-link" href={link.url}>
-              {link.label}
-            </a>
-          ))}
+        <div className="contact-band__aside">
+          <EmailSignupForm />
+          <div className="contact-band__links" aria-label="Contact links">
+            {sortedLinks.map((link) => (
+              <a key={link.id} className="text-link" href={link.url}>
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </main>
